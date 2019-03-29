@@ -20,7 +20,9 @@
 # Installing JMC Jars to a local repo
 # ----------------------------------------------------------------------------
 
-jmc_version=`echo $(basename -a $JAVA_HOME/lib/missioncontrol/plugins/com.oracle.jmc.*.jar) | sed 's/.*_\(.*\)\.jar/\1/'`
+set -eux
+
+jmc_version=`echo $(basename -a $JAVA_HOME/lib/missioncontrol/plugins/com.oracle.jmc.common_*.jar) | sed 's/.*_\(.*\)\.jar/\1/'`
 
 echo "JMC JAR version: $jmc_version"
 
